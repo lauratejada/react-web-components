@@ -280,7 +280,7 @@ section {
 section.gallery {
     margin-top: 80px;
     margin-bottom: 80px;
-    height: 100vh;
+    height: auto;
 }
 
 .gallery h3 {
@@ -354,7 +354,7 @@ div.image img:hover{
     section.gallery {
         margin-top: 80px;
         margin-bottom: 80px;
-        height: 100vh;
+        height: auto;
     }
 }
 /* ------------------------------- */
