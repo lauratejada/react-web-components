@@ -1,0 +1,381 @@
+@import url(reset.css);
+
+:root {
+    --app-bg-gray: #fff;
+    --app-body-text-color: #4c4d4d; 
+    --app-header-color: #12274e;  
+    --app-header-font-color: #fff; 
+    --app-footer-color: #f3f0f0;  
+    --app-footer-font-color: #444; 
+    --app-button-color: #1292ee;  
+    --app-button-font-color: #fff;
+    --app-button-hover-color: #fff; 
+    --app-button-hover-font-color:  #1292ee; 
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--app-bg-gray);
+    color: var(--app-body-text-color);
+}
+
+/* ------------------------------- */
+/* CSS Page Container              */
+/* ------------------------------- */
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+/* ------------------------------- */
+/* HEADER                           */
+/* ------------------------------- */
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    height: 60px;
+    width: 100%;
+    color: var(--app-header-font-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bg-dark {
+    background-color: #0c0c0c;
+}
+
+header h1 {
+    line-height: 60px;
+    font-weight: 900;
+}
+
+header .flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .title h1 {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    line-height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    font-size: 0;
+}
+
+nav ul li {
+    display: inline;
+    line-height: 60px;
+}
+
+nav ul li a, .nav-3bar i {
+    color: var(--app-header-font-color);
+    line-height: 60px;
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    transition: all 0.25s ease-in-out;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-3bar i {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav ul li a:hover {  /*  .nav-3bar i:hover  */
+    color: var(--app-button-color);
+    background-color: transparent;
+    /*display: inline-flex; */
+    /*border-bottom: 2px solid var(--app-button-color); */
+}
+
+@media (max-width:768px) {
+    nav > ul {
+        display: none;
+    }
+
+    .nav-3bar:first-child {
+        display: block;
+        text-align: right;
+    }
+
+    nav ul li {
+        text-align: right;  
+    }
+
+    nav ul li ~ li {
+        border-top: 1px solid rgba(250, 250, 250, 0.1);
+    }
+
+    nav ul li a:hover {
+        border-bottom: none;
+    }
+
+    .show-menu-responsive {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+    }
+
+    .show {
+        display: grid;
+    }
+
+    .not-show {
+        display: none;
+    }
+}
+
+@media (min-width:768px) {
+    nav > ul {
+        display: block;
+    }
+    .nav-3bar {
+        display: none;
+    }    
+}
+
+/* ------------------------------- */
+/* HOME - Main - Banner            */
+/* ------------------------------- */
+
+main {
+    height: auto;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    height: 100vh;
+    background: url("https://lauratejada.github.io/my-website/images/hero-banner.jpg")  rgb(56, 57, 70);
+    background-position: center; 
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.intro-animation-row {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.intro-animation-col {
+    width: 60%;
+    text-align: left;
+}
+
+.title-banner h2 {
+    font-size: 40px;
+    color: var(--app-header-font-color);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    line-height: 45px;
+    text-align: left;
+    padding-bottom: 30px;
+    animation: trans 0.5s ease-in;
+    animation-delay: 0.1s; 
+    text-shadow: 2px 5px 10px #000;
+}
+
+.title-banner h5 {
+    font-size: 20px;
+    color: var(--app-header-font-color);
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 40px;
+    text-align: left;
+    padding-bottom: 30px;
+    animation: trans 0.5s ease-in;
+    animation-delay: 0.1s; 
+    text-shadow: 2px 5px 10px #000;
+}
+
+.button {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    background-color: transparent;
+    color: var(--app-button-font-color);
+    border-radius: 50px;
+    box-shadow: 0px 2px 8px rgba(131, 131, 131, 0.4);
+    padding: 10px 35px;
+    cursor: pointer;
+    text-decoration: none;
+    animation: trans 0.5s ease-in;
+    animation-delay: 0.3s; 
+    border: 2px solid;
+    border-color: var(--app-button-color);
+}
+
+.button ~ .button {
+    margin-left: 15px;
+}
+
+.primary{
+    background-color: var(--app-button-color);
+    color: var(--app-button-font-color);
+}
+
+.secondary {
+    color: var(--app-button-font-color);
+    border-color: var(--app-button-font-color);
+}
+
+.button:hover {
+    background-color: var(--app-button-color);
+    color: var(--app-button-font-color);
+}
+
+.primary:hover {
+    background-color: #000;
+    color: var(--app-button-font-color);
+}
+
+.secondary:hover {
+    border-color: var(--app-button-color);
+    background-color: var(--app-button-color);
+    color: var(--app-button-font-color);
+}
+
+@keyframes trans {
+    from {
+        opacity: 0;
+        translate: -30px 0;
+    } to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@media (max-width:768px) {
+    .title-middle h1 {
+        font-size: 24px;
+    }
+    
+    .intro-animation-col {
+        width: 90%;
+    }
+}
+
+/* ------------------------------- */
+/* MAIN - Gallery                 */
+/* ------------------------------- */
+
+section.gallery {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    height: 100vh;
+}
+
+.gallery h3 {
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.gallery p {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #8c89a2;
+    padding: 0vh 20vw;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px 15px;
+    grid-auto-flow: row;
+    width: 100%;
+}
+
+div.image img{
+    border-radius: 5px;
+    box-shadow: 0 0 40px rgba(51,51,51,.1);
+    transition: transform .5s ease;
+}
+
+div.image img:hover{
+    transform: scale(1.1);
+}
+
+.middle-button {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+@media (max-width:768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px 15px;
+        grid-auto-flow: row;
+        width: 100%;
+        justify-items: center;
+    }
+
+    section.gallery {
+        margin-top: 80px;
+        margin-bottom: 80px;
+        height: auto;
+    }
+}
+
+@media (min-width:768px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px 15px;
+        grid-auto-flow: row;
+        width: 100%;
+    }
+
+    section.gallery {
+        margin-top: 80px;
+        margin-bottom: 80px;
+        height: 100vh;
+    }
+}
+/* ------------------------------- */
+/* Footer                          */
+/* ------------------------------- */
+
+footer {
+    height: 60px;
+    width: 100%;
+    background-color: var(--app-footer-color);
+    color: var(--app-footer-font-color);
+}
+
+footer .flex {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+footer .copy p {
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: 400;
+}
